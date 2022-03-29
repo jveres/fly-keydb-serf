@@ -1,0 +1,8 @@
+# fly.toml file generated for keydb-test on 2022-03-29T11:13:03+02:00
+
+app = "keydb-test"
+
+
+[experimental]
+  allowed_public_ports = []
+  private_network = true
