@@ -15,7 +15,7 @@ echo "-- local ip: $ip, replica count: $replicacount"
 while read line; do
   peer=$(echo "$line" | awk '{print $2}')
   echo "Peer joined: $peer"
-  if [ "$peer" != "$ip" ]; then
+  if [ "$peer" != "$ip" ] && [[ $replicas != *"_host:$peer"* ]]; then
     echo "-- adding replica $peer"
     keydb-cli replicaof $peer 6379
   fi

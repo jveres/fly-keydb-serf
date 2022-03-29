@@ -20,6 +20,6 @@ check_replica_count()
 }
 
 while true; do
-  check_replica_count
   sleep $refresh
+  check_replica_count
 done

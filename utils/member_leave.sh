@@ -15,7 +15,7 @@ echo "-- local ip: $ip, replica count: $replicacount"
 while read line; do
   peer=$(echo "$line" | awk '{print $2}')
   echo "Peer left or failed: $peer"
-  if [ "$peer" != "$ip" ]; then
+  if [ "$peer" != "$ip" ] && [[ $replicas == *"_host:$peer"* ]]; then
     echo "-- removing replica $peer"
     keydb-cli replicaof remove $peer 6379
   fi
