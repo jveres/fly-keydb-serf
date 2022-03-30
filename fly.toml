@@ -2,6 +2,9 @@
 
 app = "keydb-test"
 
+[metrics]
+  port = 9121
+  path = "/metrics"
 
 [experimental]
   allowed_public_ports = []
