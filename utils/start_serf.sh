@@ -4,7 +4,7 @@ set -e
 exec serf agent \
   -node="${FLY_REGION}-$(hostname)" \
   -profile=wan \
-  -join=$FLY_APP_NAME.internal \
+  -join=nearest.of.$FLY_APP_NAME.internal \
   -bind=fly-local-6pn \
   -rpc-addr=fly-local-6pn:7373 \
   -tag region="${FLY_REGION}" \

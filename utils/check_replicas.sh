@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 refresh=5
-replicacount=0
+replicacount=""
 echo "checking for replica count at $refresh secs..."
 export REDISCLI_AUTH=$(echo $KEYDB_PASSWORD)
 
