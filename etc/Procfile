@@ -1,4 +1,4 @@
-keydb: /usr/bin/start_keydb.sh
-prom_exporter: /usr/bin/start_prom_exporter.sh
-serf: /usr/bin/start_serf.sh
-check_replicas: /usr/bin/check_replicas.sh
+keydb: /usr/local/bin/start_keydb.sh
+prom_exporter: /usr/local/bin/start_prom_exporter.sh
+serf: /usr/local/bin/start_serf.sh
+check_replicas: /usr/local/bin/check_replicas.sh

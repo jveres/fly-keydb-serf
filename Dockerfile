@@ -1,8 +1,8 @@
 FROM eqalpha/keydb:alpine
 
-RUN apk -U add bash tmux
+RUN apk -U add bash tmux openssl bind-tools
 
-COPY utils /usr/bin/
+COPY utils /usr/local/bin/
 COPY etc /etc/
 
-CMD /usr/bin/overmind start -N -r keydb,prom_exporter,serf,check_replicas -f /etc/Procfile
+CMD overmind start -N -r keydb,prom_exporter,serf,check_replicas -f /etc/Procfile
