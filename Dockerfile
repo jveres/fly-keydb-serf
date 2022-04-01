@@ -1,6 +1,6 @@
 FROM eqalpha/keydb:alpine
 
-RUN apk -U add bash tmux openssl bind-tools
+RUN apk -U add bash tmux
 
 COPY utils /usr/local/bin/
 COPY etc /etc/

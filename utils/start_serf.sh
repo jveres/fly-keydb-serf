@@ -1,12 +1,10 @@
 #!/bin/bash
 set -e
 
-JOIN_ADDR=$(dig aaaa nearest.of.$FLY_APP_NAME.internal +short | tail -1)
-
 exec serf agent \
   -node="${FLY_REGION}-$(hostname)" \
   -profile=wan \
-  -join=$JOIN_ADDR \
+  -join=$FLY_APP_NAME.internal \
   -bind=fly-local-6pn \
   -rpc-addr=fly-local-6pn:7373 \
   -tag region="${FLY_REGION}" \
