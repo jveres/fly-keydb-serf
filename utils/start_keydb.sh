@@ -6,7 +6,7 @@ sysctl net.core.somaxconn=1024
 
 TOTALRAM=$(cat /proc/meminfo | grep -i 'memtotal' | grep -o '[[:digit:]]*')
 TOTALRAM=$((($TOTALRAM)/1024))
-MAXMEMORY=$(((($TOTALRAM*10)-$TOTALRAM)/10))
+MAXMEMORY=$(($TOTALRAM*4/5))
 MAXMEMORY_POLICY="allkeys-lru"
 
 exec keydb-server /etc/keydb.conf \
