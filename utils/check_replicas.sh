@@ -2,11 +2,11 @@
 
 refresh=5
 replicacount=""
-echo "checking for replica count at $refresh secs..."
+echo "checking for replicas every $refresh secs..."
 export REDISCLI_AUTH=$(echo $KEYDB_PASSWORD)
 
 check_replica_count()
-{
+{ 
   if ( ps aux | grep -v grep | grep -q keydb-server ); then
     replicas=$(keydb-cli info replication | grep "_host:")
     count=$(echo "$replicas" | grep -v ^$ | wc -l)
