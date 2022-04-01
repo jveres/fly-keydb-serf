@@ -9,6 +9,5 @@ exec serf agent \
   -rpc-addr=fly-local-6pn:7373 \
   -tag region="${FLY_REGION}" \
   -tag app="keydb" \
-  -event-handler "query:load=uptime" \
   -event-handler "member-join=member_join.sh" \
   -event-handler "member-leave,member-failed=member_leave.sh"
