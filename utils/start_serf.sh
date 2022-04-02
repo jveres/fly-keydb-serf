@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-JOIN_ADDR=$(dig aaaa nearest.of.$FLY_APP_NAME.internal +short | tail -1)
+JOIN_ADDR=$(dig aaaa $FLY_APP_NAME.internal +short | tail -1)
 LOCAL_IP=$(grep fly-local-6pn /etc/hosts | awk '{print $1}')
 
 exec serf agent \
